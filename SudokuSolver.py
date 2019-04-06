@@ -83,19 +83,20 @@ def sudoku_solver(sudoku):
 
 total_time_taken = 0
 
-for i in range(len(sudokus)):
-    start = time.time()
-    sudoku = sudokus[i].copy()
-    print("This is sudoku number", i)
-    print(sudoku)
-    your_solution = sudoku_solver(sudokus[i])
-    print("This is your solution for sudoku number", i)
-    print(your_solution)
-    print("Is your solution correct?")
-    print(np.array_equal(your_solution, solutions[i]))
-    end = time.time()
-    time_taken = (end - start)
-    print(time_taken, "seconds for puzzle", i)
-    total_time_taken += time_taken
+def main():
+    for i in range(len(sudokus)):
+        start = time.time()
+        sudoku = sudokus[i].copy()
+        print("This is sudoku number", i)
+        print(sudoku)
+        your_solution = sudoku_solver(sudokus[i])
+        print("This is your solution for sudoku number", i)
+        print(your_solution)
+        print("Is your solution correct?")
+        print(np.array_equal(your_solution, solutions[i]))
+        end = time.time()
+        time_taken = (end - start)
+        print(time_taken, "seconds for puzzle", i)
+        total_time_taken += time_taken
 
 print("All puzzles took {0} seconds to solve".format(total_time_taken))
