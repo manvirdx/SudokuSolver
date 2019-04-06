@@ -26,12 +26,10 @@ def check_possible_values(sudoku, row, col):
         #If the cell is not equals to zero, then it checks the value in the cell and removes it from all_possible_values
         a = int(sudoku[row][i])
         if (a != 0): 
-#             all_possible_values.pop(all_possible_values[a-1])
             all_possible_values[a - 1] = False
         
         b = int(sudoku[i][col])
         if (b != 0):
-#             all_possible_values.pop(all_possible_values[b-1])
             all_possible_values[b - 1] = False
     
     #Definition of the starting cell in the 3x3, this applies to all of them in the sudoku
@@ -43,7 +41,6 @@ def check_possible_values(sudoku, row, col):
         for j in range(0,3):
             a = int(sudoku[start_row_3x3 + i][start_col_3x3 + j])
             if (a != 0):
-#                 all_possible_values.pop(all_possible_values[a-1])
                 all_possible_values[a - 1] = False
     return all_possible_values
 
